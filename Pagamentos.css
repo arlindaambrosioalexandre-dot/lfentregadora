@@ -1,0 +1,23 @@
+#botao{
+  border: 2px solid rgba(0, 157, 255, 0.845);
+  margin-left: 1100px;
+  border-radius: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(127, 255, 244);
+ margin-block: 30px;
+
+}
+h1{
+  text-align: justify;
+}
+
+nav{
+  display: flex;
+
+
+}
+#botao a{
+   
+ text-decoration: none;
+}

@@ -1,0 +1,74 @@
+/* =======================================================
+   CADASTRO
+   ======================================================= */
+.tela-cadastro {
+  padding: 28px 50px 50px;
+}
+
+.cabecalho-cadastro {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 10px;
+}
+
+.opcoes-sexo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.opcoes-sexo label {
+  font-family: var(--fonte-corpo);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* radio buttons nao devem ocupar 100% da largura */
+.opcoes-sexo input {
+  width: auto;
+}
+
+#botao-principal {
+  background: #77c4bc;
+  width: 90px;
+  height: 50px;
+  padding: 0;            /* o padding global de 40px esmagava o texto */
+  border-radius: 20px;
+  font-size: 18px;
+  border: 1px solid var(--cor-cartao-borda);
+  margin-top: 10px;
+  align-items: 100px;
+margin-right: 600px;
+}
+#botao{
+  border: 2px solid rgba(0, 157, 255, 0.845);
+  margin-left: 1100px;
+  border-radius: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(127, 255, 244);
+ margin-block: 30px;
+ 
+}
+h1{
+  text-align: justify;
+}
+
+nav{
+  display: flex;
+
+
+}
+#botao a{
+text-decoration: none;  
+}
+#botao-principal a{
+text-decoration: none;  
+}
+#botao{
+  text-decoration: none;
+}

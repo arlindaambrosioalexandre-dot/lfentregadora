@@ -1,0 +1,80 @@
+/* =======================================================
+   PAGINA INICIAL
+   ======================================================= */
+.tela-inicial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.tela-inicial .subtitulo {
+  font-family: var(--fonte-titulo);
+  text-align: center;
+  font-size: 18px;
+  max-width: 640px;
+  margin: 6px auto;
+}
+
+.grupo-acoes-inicial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.texto-rodape-inicial {
+  margin-top: auto;
+  padding-top: 60px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 16px;
+}
+
+/* Botao redondo do sino.
+   padding:0 e essencial: o .botao-principal global tem padding 14px 40px,
+   que e maior que os 56px de largura e deformava o circulo. */
+.tela-inicial .botao-principal {
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  background: #cfeeeb;
+  color: var(--cor-texto-escuro);
+}
+
+.botao-inicial {
+  border-radius: 20px;
+  width: 100px;
+  height: 40px;
+  background: #cfeeeb;
+  border: none;
+  cursor: pointer;
+}
+
+.botao-fantasma:hover{
+background-color: white;
+font-size: 20px;
+color: white;
+cursor: pointer;
+}
+
+#icone-menu-pontos a{
+  text-decoration: none;
+  color: var(--cor-branco--);
+}
+.botao-fantasma a{
+  text-decoration: none;
+}
+.link-secundario a{
+  text-decoration: none;
+  font-size: 20px;
+}
+nav{
+  background-color: rgba(255, 255, 255, 0.573);
+  width: 100%;
+  height: 70px;
+}

@@ -1,0 +1,48 @@
+body{
+    background-image: url(https://dropnacional.com.br/wp-content/uploads/2023/04/fornecedor-de-dropshipping-1089x730.jpg);
+    background-position: center;
+background-size: cover;
+width: 100%;
+height: 100%;
+background-repeat: no-repeat;
+}
+h1{
+    color: white;
+    align-content: center;
+    text-align: center;
+    font-size: 30px;
+}
+.conteiner{
+    color: white;
+    display: flex;
+    gap: 40px;
+flex-wrap: wrap;
+font-size: 25px;
+}
+h2{
+    font-size: 40px;
+color: rgb(236, 233, 233);
+font-family: 'Times New Roman', Times, serif;
+}
+#botao{
+  border: 2px solid rgba(0, 157, 255, 0.845);
+  margin-left: 1100px;
+  border-radius: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(127, 255, 244);
+ margin-block: 30px;
+}
+h1{
+  text-align: justify;
+}
+
+nav{
+  display: flex;
+background-color: rgba(231, 238, 238, 0.388);
+
+}
+#botao a{
+   
+ text-decoration: none;
+}

@@ -1,0 +1,116 @@
+#botao{
+  border: 2px solid rgba(0, 157, 255, 0.845);
+  margin-left: 1100px;
+  border-radius: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(127, 255, 244);
+ margin-block: 30px;
+}
+h1{
+  text-align: justify;
+}
+
+nav{
+  display: flex;
+
+
+}
+#botao a{
+   
+ text-decoration: none;
+}
+.Notificacoes{
+  text-align: center;
+  align-items: center;
+  color: white;
+
+}
+.Noti{
+  background-color: rgb(191, 188, 188);
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px black;
+  width: 700px;
+  height: 70px;
+  align-items: center;
+  margin-left: 430px;
+  padding-top: 15px;
+}
+.Noti1{
+  background-color: rgb(193, 190, 190);
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  box-shadow:  2px 2px 2px black;
+  width: 700px;
+  height: 60px;
+  align-items: center;
+  margin-left: 430px;
+  padding-top: 15px;
+}
+.Noti3{
+  background-color: rgb(197, 193, 193);
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  box-shadow: 20px;
+  width: 700px;
+  height: 80px;
+  align-items: center;
+  margin-left: 430px;
+  padding-top: 15px;
+}
+.Noti4{
+  background-color: rgb(186, 186, 186);
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  box-shadow:  2px 2px 2px black;
+  width: 700px;
+  height: 70px;
+  align-items: center;
+  margin-left: 430px;
+  padding-top: 15px;
+}
+.Noti2{
+  background-color: rgb(186, 182, 182);
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  box-shadow:  2px 2px 2px black;
+  width: 700px;
+  height: 70px;
+  align-items: center;
+  margin-left: 430px;
+  padding-top: 15px;
+}
+.Noti7{
+  background-color: rgb(186, 182, 182);
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  box-shadow:  2px 2px 2px black;
+  width: 700px;
+  height: 70px;
+  align-items: center;
+  margin-left: 430px;
+  padding-top: 15px;
+}
+.Noti5{
+  background-color: rgb(186, 182, 182);
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  box-shadow:  2px 2px 2px black;
+  width: 700px;
+  height: 70px;
+  align-items: center;
+  margin-left: 430px;
+  padding-top: 15px;
+}
+.Noti6{
+  background-color: rgb(186, 182, 182);
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  box-shadow:  2px 2px 2px black;
+  width: 700px;
+  height: 70px;
+  align-items: center;
+  margin-left: 430px;
+  padding-top: 15px;
+}

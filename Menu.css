@@ -1,0 +1,147 @@
+.tela-menu {
+  padding: 30px 40px 50px;
+}
+
+.grade-menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 30px;
+  
+}
+.grade-menu a{
+  color: white;
+}
+
+.cartao-menu {
+  background: rgba(214, 217, 218, 0.598);
+  border: 1px solid var(--cor-cartao-borda);
+    border-radius: var(--raio-padrao);
+  padding: 30px 20px;
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
+ 
+}
+.cartao-menu1 {
+  background: rgba(214, 217, 218, 0.598);
+  border: 1px solid var(--cor-cartao-borda);
+    border-radius: var(--raio-padrao);
+  padding: 30px 20px;
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
+ 
+}
+.cartao-menu2 {
+  background: rgba(214, 217, 218, 0.598);
+  border: 1px solid var(--cor-cartao-borda);
+    border-radius: var(--raio-padrao);
+  padding: 30px 20px;
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
+ 
+}
+ 
+
+.cartao-menu3 {
+  background: rgba(214, 217, 218, 0.598);
+  border: 1px solid var(--cor-cartao-borda);
+    border-radius: var(--raio-padrao);
+  
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
+  width: 400px;
+  height: 150px;
+  padding-top: 100px;
+ 
+}
+.cartao-menu4 {
+  background: rgba(214, 217, 218, 0.598);
+  border: 1px solid var(--cor-cartao-borda);
+    border-radius: var(--raio-padrao);
+  padding: 30px 20px;
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
+ 
+}
+.cartao-menu5 {
+  background: rgba(214, 217, 218, 0.598);
+  border: 1px solid var(--cor-cartao-borda);
+    border-radius: var(--raio-padrao);
+  padding: 30px 20px;
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
+ 
+}
+.cartao-menu6 {
+  background: rgba(214, 217, 218, 0.598);
+  border: 1px solid var(--cor-cartao-borda);
+    border-radius: var(--raio-padrao);
+  padding: 30px 20px;
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
+ 
+}
+.cartao-menu7 {
+  background: rgba(214, 217, 218, 0.598);
+  border: 1px solid var(--cor-cartao-borda);
+    border-radius: var(--raio-padrao);
+  padding: 30px 20px;
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
+ 
+}
+.cartao-menu8 {
+  background: rgba(214, 217, 218, 0.598);
+  border: 1px solid var(--cor-cartao-borda);
+    border-radius: var(--raio-padrao);
+  padding: 30px 20px;
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
+ 
+}
+
+
+
+
+
+.cartao-menu .icone-menu {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Responsivo (tem de vir DEPOIS das regras normais ja esta) */
+@media (max-width: 1150px) {
+  .grade-menu { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+#botao{
+  border: 2px solid rgba(0, 157, 255, 0.845);
+  margin-left: 1100px;
+  border-radius: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(127, 255, 244);
+ margin-block: 30px;
+}
+h1{
+  text-align: justify;
+}
+nav{
+  display: flex;
+  background-color:rgba(235, 239, 239, 0.671);
+}
+#botao a{
+   
+ text-decoration: none;
+}

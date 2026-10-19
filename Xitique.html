@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-mz">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lfentregadora.Lda - Grupos de xitique</title>
+  <link rel="stylesheet" href="Indice.css" />
+  <link rel="stylesheet" href="Xitique.css" />
+</head>
+<body>
+
+  <div class="page" id="page">
+  <div class="top-bar"><span>LFentregadora.Lda</span><button onclick="history.back()">Voltar</button></div>
+  <div class="center-title">
+    <h2>Grupos de xitique</h2><br>
+    <p>Grupo de eletrodomesticos</p>
+  </div>
+  <div id="pinned">📌 <span id="pinnedText"></span> <button onclick="unpin()" style="float:right;background:none;border:none;color:#000;font-weight:bold;cursor:pointer">✕</button></div>
+  <div class="chat-area" id="chat">
+    <div class="msg-block"><div class="name">Maria dos santos:</div><div class="bubble" onclick="openCtx(event,this)">Bom dia irmas em cristo, como estao?</div></div>
+    <div class="msg-block"><div class="name right">Antonia:</div><div class="bubble right" onclick="openCtx(event,this)">Bom dia irma, eu tambem estou bem na mesma graça, que tal esse mes fazermos de gileiras?</div></div>
+    <div class="msg-block"><div class="name">Joana:</div><div class="bubble" onclick="openCtx(event,this)">Bom dia, eu tambem concordo, estou a precisar de uma nova</div></div>
+  </div>
+  <div id="typing"><b>Mariana Jose</b>Escrevendo.......</div>
+  <div id="ctx">
+    <button onclick="copyMsg()">📋 Copiar mensagem</button>
+    <button onclick="forwardMsg()">↗️ Reencaminhar</button>
+    <button onclick="pinMsg()">📌 Fixar / Afixar</button>
+    <button onclick="deleteMsg()" style="color:#f15c6d">🗑️ Apagar mensagem</button>
+  </div>
+  <div class="emoji-panel" id="emojiPanel"></div>
+  <div class="file-panel" id="filePanel">
+    <label for="fotoInput">📷 Foto/Vídeo<input type="file" id="fotoInput" accept="image/*,video/*" hidden multiple></label>
+    <label for="fileInput">📁 Ficheiro<input type="file" id="fileInput" hidden multiple></label>
+  </div>
+  <div class="bottom">
+    <div class="input-row">
+      <button class="icon-btn" id="emojiBtn">😊</button>
+      <button class="icon-btn" id="attachBtn">📎</button>
+      <div class="input-wrap"><textarea id="msgInput" rows="1" placeholder="Escreva uma mensagem"></textarea></div>
+      <button class="send-btn" id="sendBtn">➤</button>
+    </div>
+  </div>
+
+  <script>
+    let currentBubble=null
+const chat=document.getElementById('chat')
+const input=document.getElementById('msgInput')
+const ctx=document.getElementById('ctx')
+const emojiPanel=document.getElementById('emojiPanel')
+const filePanel=document.getElementById('filePanel')
+const emojis=["😀","😂","❤️","🔥","🙏","😍","😅","😎","👍","👏","✅","📦","🚚","💰","✨","🥰","😭","👀","💪","🙌","🤝","💯","😉","😋","🤣","😁"]
+emojiPanel.innerHTML=emojis.map(e=>`<div class=emoji>${e}</div>`).join('')
+document.querySelectorAll('.emoji').forEach(el=>el.onclick=()=>{input.value+=el.textContent; input.focus()})
+document.getElementById('emojiBtn').onclick=()=>{emojiPanel.classList.toggle('open'); filePanel.classList.remove('open')}
+document.getElementById('attachBtn').onclick=()=>{filePanel.classList.toggle('open'); emojiPanel.classList.remove('open')}
+function openCtx(e,bubble){e.stopPropagation(); currentBubble=bubble; ctx.style.display='block'; ctx.style.left=(e.clientX-20)+'px'; ctx.style.top=(e.clientY-100)+'px'; if(parseInt(ctx.style.left)<10) ctx.style.left='10px'}
+document.addEventListener('click',()=>ctx.style.display='none')
+function copyMsg(){if(currentBubble){navigator.clipboard.writeText(currentBubble.innerText); alert('Copiado ✓')}}
+function deleteMsg(){if(currentBubble){currentBubble.parentElement.remove(); ctx.style.display='none'}}
+function pinMsg(){if(currentBubble){document.getElementById('pinned').style.display='block'; document.getElementById('pinnedText').textContent=currentBubble.innerText.substring(0,60); ctx.style.display='none'}}
+function unpin(){document.getElementById('pinned').style.display='none'}
+function forwardMsg(){let para=prompt('Reencaminhar para quem?'); if(para && currentBubble){alert('Mensagem reencaminhada para '+para+' ✓✓'); ctx.style.display='none'}}
+function addMessage(text, isFile=false, url='', type=''){
+  let block=document.createElement('div')
+  block.className='msg-block'
+  let content = text
+  if(isFile){
+    if(type.startsWith('image')) content = `<img src=${url}><div>${text}</div>`
+    else if(type.startsWith('video')) content = `<video src=${url} controls></video><div>${text}</div>`
+    else content = `📁 <a href=${url} target=_blank style=color:#fff>${text}</a>`
+  }
+  block.innerHTML=`<div class=name>Você:</div><div class="bubble me" onclick="openCtx(event,this)">${content}</div>`
+  chat.appendChild(block)
+  chat.scrollTop=chat.scrollHeight
+}
+document.getElementById('sendBtn').onclick=()=>{
+  if(!input.value.trim())return
+  addMessage(input.value)
+  input.value=''
+  input.style.height='auto'
+}
+input.addEventListener('keydown',e=>{if(e.key==='Enter' && !e.shiftKey){e.preventDefault(); document.getElementById('sendBtn').click()}})
+input.addEventListener('input',()=>{input.style.height='auto'; input.style.height=input.scrollHeight+'px'})
+document.getElementById('fotoInput').onchange=(e)=>{
+  [...e.target.files].forEach(f=>{
+    let url=URL.createObjectURL(f)
+    addMessage(f.name,true,url,f.type)
+  })
+}
+document.getElementById('fileInput').onchange=(e)=>{
+  [...e.target.files].forEach(f=>{
+    let url=URL.createObjectURL(f)
+    addMessage(f.name,true,url,f.type)
+  })
+}
+  </script>
+</body>
+</html>

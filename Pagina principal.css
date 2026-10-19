@@ -1,0 +1,130 @@
+/* =======================================================
+   ENCOMENDA
+   ======================================================= */
+.tela-encomenda {
+  padding: 28px 40px 40px;
+}
+
+.barra-busca-encomenda {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.campo-busca {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  padding: 14px 20px;
+  color: #555;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.botao-enviar-pequeno {
+  background: #cfeeeb;
+  color: #111;
+  border-radius: 8px;
+  padding: 12px 26px;
+  font-family: var(--fonte-titulo);
+  border: none;
+  cursor: pointer;
+}
+.botao-enviar-pequeno:hover {
+  background: rgba(255, 255, 255, 0.85);
+  color: #b05353;
+  /* removido font-size:18px do hover: fazia o botao "saltar" e mexer no layout */
+}
+
+.etiqueta-produtos-servicos {
+  display: inline-block;
+  background: #cfeeeb;
+  color: var(--cor-texto-escuro);
+  padding: 10px 20px;
+  border-radius: var(--raio-padrao);
+  font-weight: bold;
+  margin: 24px 0 16px;
+}
+
+/* lista de parceiros: logo + descricao lado a lado */
+.lista-parceiros {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.linha-parceiro {
+  display: flex;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  gap: 10px;
+}
+
+.logo-parceiro {
+  width: 220px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fonte-titulo);
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--cor-branco);
+}
+
+.descricao-parceiro {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--cor-texto-escuro);
+  padding: 16px 24px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+/* cores individuais aproximadas de cada marca parceira */
+.logo-electronic-store { background: #e91e63; }
+.logo-kingpie { background: #6a1b9a; }
+.logo-adidas { background: #ffffff; color: #111; }
+.logo-alo { background: #111111; color: #ffffff; }
+.logo-muzza { background: #d32f2f; }
+.logo-take-away { background: #f5f5f0; color: #d18a1b; }
+.logo-dueros-sabores { background: #ffffff; color: #d18a1b; }
+.logo-puma { background: #111111; }
+
+/* Responsivo (tem de vir DEPOIS das regras normais) */
+@media (max-width: 1150px) {
+  .linha-parceiro { flex-direction: column; }
+  .logo-parceiro { width: 100%; }
+}
+.link{
+
+margin-left: 1000px;
+  
+ gap: 50px;
+  
+ margin-block: 30px;
+}
+h1{
+  text-align: justify;
+}
+
+nav{
+display: flex;
+background-color: rgba(231, 238, 238, 0.388);
+
+}
+.link a{
+text-decoration: none;
+ gap: 50px; 
+ color: white;
+ margin-left: 20px;
+ font-size: 18px;
+}
+.etiqueta-produtos-servicos a{
+  
+  text-decoration: none;
+}

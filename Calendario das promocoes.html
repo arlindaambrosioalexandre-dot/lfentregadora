@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificacoes</title>
+    <link rel="stylesheet" href="Notificacoes de promocoes.css">
+    <link rel="stylesheet" href="Indice.css">
+</head>
+
+<style>body{font-family:Arial; max-width:600px; margin:20px auto; padding:15px}
+input,textarea{width:100%; padding:12px; margin:8px 0; border-radius:8px; border:1px solid #ddd; box-sizing:border-box}
+button{background:#6c2cff; color:white; border:none; padding:14px; border-radius:8px; width:100%; cursor:pointer; font-weight:bold; font-size:15px}
+.card{border:1px solid #eee; padding:12px; border-radius:10px; margin:10px 0; background:white}
+#botao{
+  border: 2px solid rgba(0, 157, 255, 0.845);
+  margin-left: 900px;
+  border-radius: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(127, 255, 244);
+ margin-block: 25px;
+ 
+}
+h1{
+  text-align: justify;
+  
+}
+
+nav{
+  display: flex;
+background-color: rgba(231, 238, 238, 0.388);
+margin-right: 700px;
+}
+#botao a{
+  text-decoration: none;
+ 
+}
+</style>
+<body>
+    <nav>
+        <h1>LFentregadora.Lda</h1>
+        <button id="botao"><a href="Menu.html">Voltar</a></button>
+    </nav>
+
+    <h2 style="font-size: 30px; text-align: center;">Notificacoes das promocoes</h2>
+ 
+
+<h2>📢 Criar Nova Promoção LF Entregadora</h2>
+
+<input id="titulo" placeholder="Título: Ex: Summer Sale Campaign">
+<input id="desconto" type="number" placeholder="Desconto (%) Ex: 20">
+<label>Data Programada</label>
+<input id="data" type="date">
+<label>Hora Programada</label>
+<input id="hora" type="time" value="10:00">
+<textarea id="msg" rows="3" placeholder="Mensagem: Ex: Ganhe 20% off em todas entregas hoje!"></textarea>
+
+<button onclick="agendarPromo()">🔔 Agendar Promoção + Ativar Notificação</button>
+<button onclick="enviarAgora()" style="background:#25D366; margin-top:8px">🚀 Enviar Agora Pra Todos</button>
+
+<h3>📅 Promoções Agendadas</h3>
+<div id="lista">Carregando...</div>
+
+
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+import { getFirestore, collection, addDoc, onSnapshot, orderBy, query, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+
+const firebaseConfig = { 
+  apiKey: "SUA_API_KEY",
+  authDomain: "SEU_PROJETO.firebaseapp.com",
+  projectId: "SEU_PROJETO"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.agendarPromo = async()=>{
+  if(!titulo.value || !data.value){ return alert("Preencha título e data"); }
+  const promo = {
+    titulo: titulo.value, desconto: titulo.value,
+    descontoNum: Number(desconto.value),
+    data: data.value, hora: hora.value,
+    mensagem: msg.value,
+    status: "Agendada",
+    criarEm: serverTimestamp(),
+    dispararEm: new Date(`${data.value}T${hora.value}:00`).getTime()
+  };
+  await addDoc(collection(db, "promocoes"), promo);
+  alert("✅ Agendada para "+data.value+" às "+hora.value);
+  titulo.value=""; desconto.value=""; msg.value="";
+}
+
+window.enviarAgora = async()=>{
+  const promo = { titulo: titulo.value, descontoNum: Number(desconto.value), mensagem: msg.value, status:"Enviada", criarEm: serverTimestamp(), dispararEm: Date.now() };
+  await addDoc(collection(db, "promocoes"), promo);
+  alert("🚀 Enviada! Vai disparar em 1 min");
+}
+
+onSnapshot(query(collection(db,"promocoes"), orderBy("criarEm","desc")), snap=>{
+  lista.innerHTML="";
+  snap.forEach(d=>{
+    const p=d.data();
+    const cor = p.status=="Agendada"?"#fff3cd":"#e8f5e9";
+    lista.innerHTML+=`<div class=card><b>${p.titulo}</b> - ${p.descontoNum||p.desconto}% off<br>📅 ${p.data||'agora'} às ${p.hora||''}<br>💬 ${p.mensagem}<br><small style="background:${cor}; padding:3px 8px; border-radius:10px">${p.status}</small></div>`;
+    
+  })
+});
+
+    </script>
+</body>
+</html>

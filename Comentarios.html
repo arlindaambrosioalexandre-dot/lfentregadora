@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LFentregadoraComentarios</title>
+    <link rel="stylesheet" href="Indice.css">
+</head>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+body{background:#e9eaec;display:flex;justify-content:center}
+.phone{width:100%;max-width:1000px;background:#fff;min-height:100vh;display:flex;flex-direction:column; margin-top: 100px; margin-right: 200px;}
+.top{background:#202c33;color:#fff;padding:14px;text-align:center}
+.stars-box{background:#fff;padding:20px;text-align:center;border-bottom:8px solid #f0f2f5}
+.stars{font-size:36px;cursor:pointer}
+.star{color:#ddd;transition:0.2s}
+.star.active{color:#FFB400}
+.avg{margin-top:8px;color:#667781}
+.form{padding:16px;background:#fff}
+.form textarea{width:100%;border:1.5px solid #e9edef;border-radius:12px;padding:12px;outline:none;resize:none;font-size:15px}
+.form textarea:focus{border-color:#00a884}
+.btn{width:100%;background:#00a884;color:#fff;border:none;padding:14px;border-radius:25px;font-size:16px;font-weight:600;cursor:pointer;margin-top:12px}
+.btn:disabled{background:#8696a0}
+.comments{flex:1;background:#f0f2f5;padding:12px;display:flex;flex-direction:column;gap:10px}
+.comment{background:#fff;padding:12px;border-radius:12px;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.c-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.c-top img{width:36px;height:36px;border-radius:50%}
+.c-stars{color:#FFB400;font-size:14px}
+.c-text{font-size:14px;color:#111b21;margin:6px 0}
+.c-time{font-size:11px;color:#8696a0}
+#link{
+    text-decoration: none;
+   
+}
+#filho{
+    margin-right: 50px;
+}
+</style>
+<body>
+    <nav>
+    
+        <h1 >LFentregadora</span></h1><b></b><br>
+ 
+
+    </nav>
+   <div class="phone">
+    
+  <div class="top"><b style="font-size: 20px;">⭐ Comentarios dos usuarios</b></div>
+
+  <div class="stars-box">
+    <div style="font-weight:600;margin-bottom:8px">Como foi sua experiência?</div>
+    <div class="stars" id="stars">
+      <span class="star" data-v="1">★</span>
+      <span class="star" data-v="2">★</span>
+      <span class="star" data-v="3">★</span>
+      <span class="star" data-v="4">★</span>
+      <span class="star" data-v="5">★</span>
+    </div>
+    <div class="avg" id="avgText">Toque para avaliar</div>
+  </div>
+
+  <div class="form">
+    <textarea id="text" rows="3" placeholder="Escreva seu comentário..."></textarea>
+    <input id="nome" placeholder="Seu nome (opcional)" style="width:100%;margin-top:10px;padding:12px;border:1.5px solid #e9edef;border-radius:10px;outline:none">
+    <button class="btn" id="sendBtn" disabled>Enviar Feedback ➤</button>
+  </div>
+
+  <div class="comments" id="list">
+    <div class="comment">
+      <div class="c-top"><b>Maria S.</b><span class="c-stars">★★★★★</span></div>
+      <div class="c-text">O meu bairro ja esta recebendo a devida atencao 😍</div>
+      <div class="c-time">há 2h • ✓✓</div>
+    </div>
+    <div class="comment">
+      <div class="c-top"><b>João P.</b><span class="c-stars">★★★★★</span></div>
+      <div class="c-text">Muito bom, recomendo!</div>
+      <div class="c-time">há 5h • ✓✓</div>
+    </div>
+  </div>
+  <a style="margin-left: 500px; text-decoration: none;font-size: 20px;color: rgb(88, 133, 120); " href="DrenaPSeguinte.html">Voltar</a>
+</div>
+ 
+
+    <script>
+        let nota=0
+const stars=document.querySelectorAll('.star')
+const avgText=document.getElementById('avgText')
+const text=document.getElementById('text')
+const sendBtn=document.getElementById('sendBtn')
+const list=document.getElementById('list')
+
+stars.forEach(s=>{
+  s.onclick=()=>{
+    nota=parseInt(s.dataset.v)
+    stars.forEach((st,i)=>{st.classList.toggle('active', i<nota)})
+    const txt={1:'Péssimo 😠',2:'Ruim 😕',3:'Bom 🙂',4:'Muito bom 😍',5:'Excelente 🤩'}
+    avgText.textContent=txt[nota]+' - '+nota+' estrelas'
+    check()
+  }
+})
+
+function check(){
+  sendBtn.disabled=!(nota>0 && text.value.trim().length>2)
+}
+text.oninput=check
+
+sendBtn.onclick=()=>{
+  const nome=document.getElementById('nome').value || 'Você'
+  const div=document.createElement('div')
+  div.className='comment'
+  div.innerHTML=`
+    <div class="c-top"><b>${nome}</b><span class="c-stars">${'★'.repeat(nota)}</span></div>
+    <div class="c-text">${text.value}</div>
+    <div class="c-time">agora • ✓ enviando...</div>
+  `
+  list.prepend(div)
+
+  // SIMULA ENVIO
+  setTimeout(()=>{div.querySelector('.c-time').textContent='agora • ✓✓ entregue';},800)
+  setTimeout(()=>{div.querySelector('.c-time').textContent='agora • ✓✓ lido'; div.querySelector('.c-time').style.color='#53bdeb'},1800)
+
+  // LIMPA
+  text.value=''; document.getElementById('nome').value=''; nota=0
+  stars.forEach(s=>s.classList.remove('active'))
+  avgText.textContent='Obrigado pelo feedback! 🙏'
+  sendBtn.disabled=true
+
+  // AQUI ENVIA PRO SERVIDOR
+   fetch('/api/feedback', {method:'POST', body:JSON.stringify({nota, comentario:text.value, nome})})
+}
+    </script>
+</body>
+</html>

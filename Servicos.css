@@ -1,0 +1,52 @@
+/* =======================================================
+   SERVICOS DE ENTREGA
+   ======================================================= */
+.tela-servicos {
+  padding: 48px 40px 40px;
+}
+
+.lista-servicos {
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+  margin-top: 90px;
+}
+
+.item-servico {
+  background: rgba(255, 255, 255, 0.422);
+  border-radius: var(--raio-padrao);
+  padding: 18px 24px;
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-size: 22px;
+  height: 30px;
+}
+.topo-marca{
+  text-align: justify;
+}
+.logo-letras{
+  text-align: left;
+  align-items: left;
+}
+#botao{
+  border: 2px solid rgba(197, 203, 206, 0.845);
+  margin-left: 1100px;
+  border-radius: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(127, 255, 244);
+ margin-block: 30px;
+ 
+}
+h1{
+  text-align: justify;
+}
+
+nav{
+  display: flex;
+background-color: rgba(231, 238, 238, 0.388);
+
+}
+.botao a{
+  text-decoration: none;
+}

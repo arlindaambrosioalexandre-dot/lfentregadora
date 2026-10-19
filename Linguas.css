@@ -1,0 +1,55 @@
+/* =======================================================
+   LINGUAS
+   ======================================================= */
+.tela-linguas {
+  padding: 30px 40px 50px;
+text-align: center;
+}
+
+.cabecalho-linguas {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+ margin-block: 60px;
+ 
+
+}
+
+.lista-linguas {
+  font-family: var(--fonte-titulo);
+  font-size: 36px;
+  line-height: 1.5;
+  border: 2px solid aqua;
+  border-radius: 30px;
+  background-color: rgba(200, 247, 248, 0.489);
+  width: 1000px;
+  height: 700px;
+  margin-left: 250px;
+  text-align: center;
+ 
+  padding-block: 100px;
+}
+.topo-marca{
+  text-align: justify;
+}
+.logo-letras{
+  text-align: left;
+  align-items: left;
+}
+
+#botao{
+  border: 2px solid rgba(0, 157, 255, 0.845);
+  margin-left: 1100px;
+  border-radius: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(127, 255, 244);
+ margin-block: 30px;
+}
+h1{
+  text-align: justify;
+}
+nav{
+  display: flex;
+  background-color:rgba(235, 239, 239, 0.671);
+}

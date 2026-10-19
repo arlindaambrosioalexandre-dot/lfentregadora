@@ -1,0 +1,59 @@
+/* =======================================================
+   PERFIL DO CLIENTE
+   ======================================================= */
+.tela-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 40px 50px;
+}
+
+/* antes: fundo "aqua" + height:100vh (texto branco ilegivel e caixa gigante) */
+.caixa-perfil {
+  width: 100%;
+  max-width: 1200px;
+  background: var(--cor-cartao);
+  border: 1px solid var(--cor-cartao-borda);
+  border-radius: var(--raio-padrao);
+  padding: 24px 30px;
+}
+
+.botao-avancar-redondo {
+  width: 100%;
+  background: linear-gradient(90deg, var(--cor-teal-escuro), #7fd0c9);
+  border-radius: 24px;
+  padding: 14px;
+  text-align: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.topo-marca{
+  text-align: justify;
+}
+.logo-letras{
+  text-align: left;
+  align-items: left;
+}
+#botao{
+  border: 2px solid rgba(0, 157, 255, 0.845);
+  margin-left: 1100px;
+  border-radius: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(127, 255, 244);
+ margin-block: 30px;
+
+}
+h1{
+  text-align: justify;
+}
+
+nav{
+  display: flex;
+background-color: rgba(231, 238, 238, 0.388);
+
+}
+#botao a{
+   
+ text-decoration: none;
+}

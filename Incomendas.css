@@ -1,0 +1,89 @@
+body{
+background-image: url(https://dropnacional.com.br/wp-content/uploads/2023/04/fornecedor-de-dropshipping-1089x730.jpg);
+background-position: center;
+background-size: cover;
+width: 100%;
+height: 100%;
+background-repeat: no-repeat;
+}
+.h1{
+    text-align: center;
+    color: white;
+    margin: 100px;
+}
+label{
+    color: white;
+    font-size: 20px;
+    margin-left: 30px
+}
+input{
+    background-color:rgba(235, 239, 239, 0.671);
+    height: 40px;
+    border-radius: 10px;
+    width: 500px;
+    margin-left: 20px
+}
+.botao{
+    background-color:rgb(100, 130, 123);
+    font-size: 20px;
+    border-radius: 10px;
+    color: rgb(200, 199, 199);
+    width: 15%;
+    height: 50px;
+    align-items: center;
+    margin-left: 80%;
+    margin-top:  50px;
+
+}
+.botao:hover{
+    background-color: rgb(175, 237, 217);
+    color: rgb(185, 181, 181);
+    font-size:25px;
+    width:150px;
+}
+#h1{
+    
+    margin-left: 100px;
+}
+.h2{
+        margin-left: 150px;
+        padding-left: 250px;
+
+}
+.h5{
+    margin-left: 100px;
+}
+
+#botao{
+   margin-top: 33px;
+    border: 2px solid aqua;
+    background-color: rgba(0, 255, 255, 0.897);
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    
+}
+#botao a{
+     text-decoration: none; 
+
+}
+
+h2{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 70px;
+}
+h1{
+    color: white; 
+   
+}
+.topo{
+    display: flex;
+    gap: 1000px;
+    
+}
+.container{
+    display: grid;
+    grid-template-columns: ;
+}
